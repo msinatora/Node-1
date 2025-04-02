@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+
+    <body>
+        <%- include('./partials/navbar.ejs') %>
+            <div class="container">
+                <div class="row mt-5 justify-content-center gap-3">
+                    <% if(users.length> 0) { %>
+                        <% users.forEach(user=> { %>
+                            <div class="col-12 col-xl-5"
+                                style="border: 1px solid #00000038;border-radius: 10px;padding: 20px;">
+                                <h3 class="title">
+                                    <%= user.firstName %>
+                                        <%= user.LastName %>
+                                </h3>
+
+                                <p>
+                                    <%= user.email %>
+                                </p>
+                            </div>
+
+                            <% }) %>
+                                <% } else { %>
+                                    <p>Não há usuários para exibir...</p>
+                                    <% } %>
+                </div>
+            </div>
+    </body>
+
+</html>
